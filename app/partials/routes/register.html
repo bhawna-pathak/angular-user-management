@@ -1,0 +1,35 @@
+<form class="form-horizontal" name="register" ng-submit='doRegister()' ng-controller="registerCtrl" novalidate>
+    {{register.$submitted + ' valid: ' + register.$valid}}
+    <div class="form-group" ng-class="{'has-error': (register.firstName.$invalid && register.$submitted && userErrors.firstName.required)}">
+        <label class="control-label">First Name</label>
+        <input ng-focus="userErrors.firstName = false" class="form-control" type="text" name="firstName" ng-model='user.firstName' autocomplete="off" required />
+        <span class="alert-danger" ng-if="register.firstName.$invalid && register.$submitted && userErrors.firstName.required">
+            {{userErrors.firstName.required}}
+        </span>
+    </div>
+    <div class="form-group" ng-class="{'has-error': (register.lastName.$invalid && register.$submitted && userErrors.lastName.required)}">
+        <label class="control-label">Last Name</label>
+        <input ng-focus="userErrors.lastName = false" class="form-control" type="text" name="lastName" ng-model='user.lastName' autocomplete="off" required />
+        <span class="alert-danger" ng-if="register.lastName.$invalid && register.$submitted && userErrors.lastName.required">
+            {{userErrors.lastName.required}}
+        </span>
+    </div>
+    <div class="form-group" ng-class="{'has-error': (register.userName.$invalid && register.$submitted && userErrors.userName.required)}">
+        <label class="control-label">UserName</label>
+        <input ng-focus="userErrors.userName = false" class="form-control" type="text" name="userName" ng-model='user.userName' autocomplete="off" required />
+        <span class="alert-danger" ng-if="register.userName.$invalid && register.$submitted && userErrors.userName.required">UserName is required.</span>
+    </div>
+    <div class="form-group" ng-class="{'has-error': (register.password.$invalid && register.$submitted && userErrors.password.required)}">
+        <label class="control-label">Password</label>
+        <input ng-focus="userErrors.password = false" class="form-control" type="password" name="password" ng-model='user.password' required/>
+        <span class="alert-danger" ng-if="register.password.$invalid && register.$submitted && userErrors.password.required">Password is required.</span>
+    </div>
+    <div class="form-group" ng-class="{'has-error': ((user.password !== confirmPass) && (register.confirmPass.$dirty || register.$submitted ))}">
+        <label class="control-label">Confirm Password</label>
+        <input ng-init="confirmPass = undefined" class="form-control" type="password" name="confirmPassword" ng-model='confirmPass' />
+        <span class="alert-danger" ng-if="(user.password !== confirmPass) && (register.confirmPass.$dirty || register.$submitted )">Password not matching.</span>
+    </div>
+    <div class="form-group">
+        <input class="btn btn-default" type="submit" value="submit" />
+    </div>
+</form>

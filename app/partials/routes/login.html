@@ -1,0 +1,16 @@
+<form class="form-signin" name="login" ng-submit="doLogin()" ng-controller="loginCtrl" novalidate>
+{{login.$submitted + ' valid: ' + login.$valid}}
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <label class="sr-only" for="inputUsername">Email address</label>
+    <input id="inputUsername" name="username" class="form-control" placeholder="Username" type="text" ng-model='username' ng-model-options="{updateOn: 'blur'}" required />
+    <span class="alert-danger" ng-if="login.username.$invalid && login.$submitted">
+          Enter Username.
+        </span>
+    <label class="sr-only" for="inputPassword">Email address</label>
+    <input id="inputPassword" name="password" class="form-control" placeholder="Password" type="password" ng-model='password' ng-model-options="{updateOn: 'blur'}" required />
+    <span class="alert-danger" ng-if="login.password.$invalid && login.$submitted">
+            Enter Password.
+        </span>
+    <div class="form-group"><a href="#/register">Register?</a></div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+</form>

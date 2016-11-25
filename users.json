@@ -1,0 +1,9 @@
+{
+    "users": [
+        { "firstName": "Himanshu", "lastName": "Pathak", "userName": "himanshupathak", "password": "12345" },
+        { "firstName": "Deepti", "lastName": "Pathak", "userName": "deeptipathak", "password": "123" },
+        { "firstName": "Rahul", "lastName": "Pathak", "userName": "rahulpathak", "password": "12" },
+        { "firstName": "Bharti", "lastName": "Pathak", "userName": "bhartipathak", "password": "1234" },
+        { "firstName": "Bhawna", "lastName": "Pathak", "userName": "bhawnapathak", "password": "1233" }
+    ]
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app='myApp' ng-controller="appCtrl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{siteName}}|{{pageTitle}}</title>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="app/css/style.css" />
+    </style>
+</head>
+
+<body>
+    <site-header></site-header>
+    <div class="container body-container">
+        <ng-view></ng-view>
+    </div>
+    <site-footer></site-footer>
+    <!-- app files -->
+    <script src='./app/js/myApp.js'></script>
+    <script src='./app/js/myApp.config.js'></script>
+    <!-- constants -->
+    <script src='./app/js/constants/myApp.constant.js'></script>
+    <!-- services -->
+    <script src='./app/js/services/myApp.service.logindata.js'></script>
+    <script src='./app/js/services/myApp.service.user.js'></script>
+    <!-- directives -->
+    <script src='./app/js/directives/myApp.directives.js'></script>
+    <!-- controllers -->
+    <script src='./app/js/controllers/myApp.ctrl.login.js'></script>
+    <script src='./app/js/controllers/myApp.ctrl.logout.js'></script>
+    <script src='./app/js/controllers/myApp.ctrl.profile.js'></script>
+    <script src='./app/js/controllers/myApp.ctrl.register.js'></script>
+    <script src='./app/js/controllers/myApp.ctrl.userList.js'></script>
+    <script src='./app/js/controllers/myApp.ctrl.home.js'></script>
+    <script src='./app/js/controllers/myApp.ctrl.about.js'></script>
+    <script src='./app/js/controllers/myApp.ctrl.contact.js'></script>
+</body>
+
+</html>

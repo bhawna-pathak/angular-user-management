@@ -1,0 +1,20 @@
+{
+  "name": "user-management",
+  "description": "Bhawnas experiments",
+  "main": "index.js",
+  "authors": [
+    "bhwna"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}

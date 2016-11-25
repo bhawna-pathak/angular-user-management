@@ -1,0 +1,29 @@
+<div ng-controller="userListCtrl">
+    <h1>UserList</h1>
+    <table class="table table-bordered">
+<!--         <tr ng-repeat="user in users | limitTo:1">
+            <th ng-repeat="(key, val) in user">
+                {{key}}
+            </th>
+        </tr> -->
+        <tr>
+            <th> First Name </th>
+            <th> Last Name </th>
+            <th> User Name </th>
+            <th> Password </th>
+        </tr>
+ <!--        <tr ng-repeat="user in users">
+            <td ng-repeat="(key, val) in user">
+                {{val}}
+            </td>
+        </tr> -->
+        <tr ng-repeat="user in users">
+            <!-- <td>{{user | json}}</td> -->
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.userName}}</td>
+            <td>{{user.password}}</td>
+        </tr>
+    </table>
+</div>
+</table>
