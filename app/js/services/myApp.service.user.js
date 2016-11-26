@@ -1,5 +1,5 @@
 angular.module('myApp')
-    .service('userService', function($http) {
+    .service('userService', ['$http', '$timeout', function($http, $timeout) {
         var user = {
 
         };
@@ -17,6 +17,7 @@ angular.module('myApp')
                 'required': 'Enter Password'
             }
         };
+
         // Set session storage.
         var isLoggedIn = false;
         return {
@@ -27,7 +28,10 @@ angular.module('myApp')
                     }, function(err) {
                         return err;
                     });
-                return promise;
+                return $timeout(function() {
+                    alert('Got Users');
+                    return promise;
+                }, 3000);
             },
             setUser: function(newUser) {
                 user = newUser;
@@ -45,12 +49,12 @@ angular.module('myApp')
                 this.setUser(user);
                 // console.log(this.getUser());
             },
-            logout: function () {
+            logout: function() {
                 isLoggedIn = false;
                 this.setUser({});
             },
-            checkLogin: function () {
+            checkLogin: function() {
                 return isLoggedIn;
             }
         }
-    });
+    }]);

@@ -1,7 +1,7 @@
 var app = angular.module('myApp', ['ngRoute']);
 
 
-app.controller('appCtrl', ['$scope', '$location', '$route', 'SITE','$routeParams', function($scope, $location, $route, SITE,$routeParams) {
+app.controller('appCtrl', ['$scope', '$location', '$route', 'SITE', '$routeParams', function($scope, $location, $route, SITE, $routeParams) {
     console.log('I am appCtrl');
     $scope.dispInput = function() {
         // console.log('You Clicked');
