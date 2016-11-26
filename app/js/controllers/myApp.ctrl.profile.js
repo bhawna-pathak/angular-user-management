@@ -8,6 +8,6 @@ function ProfileCtrl($scope, $location, userService) {
     if (!userService.checkLogin()) {
         $location.path('login');
     } 
-    $scope.user = userService.getUser();
 
+    $scope.user = userService.getUser();
 }

@@ -4,6 +4,16 @@
         { "firstName": "Deepti", "lastName": "Pathak", "userName": "deeptipathak", "password": "123" },
         { "firstName": "Rahul", "lastName": "Pathak", "userName": "rahulpathak", "password": "12" },
         { "firstName": "Bharti", "lastName": "Pathak", "userName": "bhartipathak", "password": "1234" },
-        { "firstName": "Bhawna", "lastName": "Pathak", "userName": "bhawnapathak", "password": "1233" }
+        { "firstName": "Bhawna", "lastName": "Pathak", "userName": "bhawnapathak", "password": "1233" },
+        { "firstName": "puja", "lastName": "mathpal", "userName": "pujamathpal", "password": "123" },
+        { "firstName": "Aishwarya", "lastName": "Rawat", "userName": "aishwaryarawat", "password": "123" },
+        { "firstName": "Reena", "lastName": "Rawat", "userName": "reenarawat", "password": "123" },
+        { "firstName": "Priyanka", "lastName": "Gunwant", "userName": "priyankagunwant", "password": "123" },
+        { "firstName": "Minakshi", "lastName": "Shahi", "userName": "minakshishahi", "password": "123" },
+        { "firstName": "Mudita", "lastName": "Tripathi", "userName": "muditatripathi", "password": "123" },
+        { "firstName": "Rina", "lastName": "Mehra", "userName": "reenamehra", "password": "123" },
+        { "firstName": "Karishma", "lastName": "Joshi", "userName": "karishmajoshi", "password": "123" },
+        { "firstName": "Iti", "lastName": "Sharma", "userName": "itisharma", "password": "123" },
+        { "firstName": "Divya", "lastName": "Joshi", "userName": "divyajoshi", "password": "123" }
     ]
 }

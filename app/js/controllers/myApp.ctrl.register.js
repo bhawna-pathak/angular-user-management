@@ -8,10 +8,10 @@ angular.module('myApp')
             var userErrors = userService.getUserErrors();
             $scope.userErrors = JSON.parse(JSON.stringify(userErrors));
 
-            userService.setUser($scope.user);
 
             if ($scope.register.$valid && $scope.user.password === $scope.confirmPass) {
                 userService.login();
+                userService.setUser($scope.user);
                 $location.path('profile');
             }
         }

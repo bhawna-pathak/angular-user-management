@@ -20,8 +20,8 @@ angular.module('myApp')
         }
     })
     .controller('appNavMainCtrl', ['$scope', '$location', 'SITE', 'userService', function($scope, $location, SITE, userService) {
-        console.log('I am in navigation controller');
-        console.log(SITE);
+        // console.log('I am in navigation controller');
+        // console.log(SITE);
         $scope.siteName = SITE.NAME;
         $scope.navItems = [{
             name: 'Home',
