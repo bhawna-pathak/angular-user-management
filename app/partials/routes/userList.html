@@ -22,8 +22,8 @@
                 <th> Password </th>
             </tr>
         </thead>
-        <tbody>
-            <tr ng-repeat="user in users | filter: {searchBy: search} | limitTo : recordsPerPage ">{{users|json}}
+        <tbody>{{data|json}}
+            <tr ng-repeat="user in data | filter: {searchBy: search} | limitTo : recordsPerPage ">
                 <td ng-class="{active: searchBy==='firstName' } ">{{user.firstName}}</td>
                 <td ng-class="{active: searchBy==='lastName' } ">{{user.lastName}}</td>
                 <td ng-class="{active: searchBy==='userName' } "><a href="#profile/{{user.userName}}">{{user.userName}}</a></td>
@@ -32,7 +32,16 @@
         </tbody>
         {{data.length}}
     </table>
-    <button type="button" class="btn btn-default" ng-click="onPreviousClick()">Prev</button>
-    {{currentPage}}/{{totalRecords}}
-    <button type="button" class="btn btn-default" ng-click="onNextClick()">Next</button>
+    <div>
+        <div class="pull-left">
+            <button type="button" class="btn btn-default" ng-click="onPreviousClick()" ng-disabled=" (currentPage == 1)">Prev</button>
+            <div>
+                <button ng-repeat="page in paginationItems" ng-click="goToPage(page)" ng-class="{active: currentPage===page}" ng-disabled="expression">{{page}}</button>
+            </div>
+            <button type="button" class="btn btn-default" ng-click="onNextClick()" ng-disabled="(currentPage== totalPages)">Next</button>
+        </div>
+        <div class="pull-right">
+            Page: {{currentPage}}/{{totalPages}}
+        </div>
+    </div>
 </div>

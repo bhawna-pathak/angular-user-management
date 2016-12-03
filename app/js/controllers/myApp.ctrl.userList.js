@@ -22,12 +22,26 @@ angular.module('myApp')
             .then(function(response) {
                     $scope.users = response.data.users;
                     $scope.totalRecords = $scope.users.length;
+                    $scope.totalPages = $scope.getTotalPages();
                     $scope.data = $scope.getData();
+                    $scope.paginationItems = [];
+                    generatePagination($scope.totalPages);
                 },
                 function(err) {
                     console.log(err);
                 });
 
+        function generatePagination(totalPages) {
+            var i = 0;
+            while (i < totalPages) {
+                $scope.paginationItems.unshift(totalPages--);
+            }
+        }
+        $scope.goToPage = function(page) {
+            console.log(page);
+            $scope.currentPage = page;
+            $scope.data = $scope.getData();
+        };
         $scope.changeSearchBy = function() {
             console.log($scope.searchBy);
         };
@@ -40,7 +54,8 @@ angular.module('myApp')
             return $scope.recordsPerPage * ($scope.currentPage - 1) + 1 - 1;
         };
         $scope.getData = function() {
-            $scope.data = $scope.users.splice(0, $scope.recordsPerPage);
+            var startingIndex = $scope.getStartingIndex();
+            $scope.data = $scope.users.slice(startingIndex, startingIndex + $scope.recordsPerPage);
             return $scope.data;
         };
         $scope.onNextClick = function() {
@@ -51,8 +66,10 @@ angular.module('myApp')
         };
 
         $scope.onPreviousClick = function() {
-            // console.log('previous clicked');
-
+            if ($scope.currentPage <= $scope.getTotalPages()) {
+                $scope.currentPage--;
+            }
+            $scope.data = $scope.getData();
         };
 
 

@@ -14,9 +14,26 @@ function ProfileCtrl($scope, $location, userService, $routeParams, $filter) {
     }
     if ($routeParams.userName) {
         $scope.userName = $routeParams.userName;
-        console.log($routeParams.userName);
-        $scope.user = userService.setUser();
+        userService.getUsers()
+            .then(function(response) {
+                    var users = response.data.users;
+                    // console.log(users);
+                    // console.log($scope.userName);
 
+                    users.every(function(element, index) {
+                        // console.log(element, index);
+                        if (element.userName === $scope.userName) {
+                            $scope.user = element;
+                            return false; 
+                        }
+                        return true;
+
+                    });
+
+                },
+                function(err) {
+                    console.log(err);
+                });
     } else {
         $scope.user = userService.getUser();
     }
