@@ -23,15 +23,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="user in users | filter: {searchBy: search} ">
+            <tr ng-repeat="user in users | filter: {searchBy: search} | limitTo : recordsPerPage ">{{users|json}}
                 <td ng-class="{active: searchBy==='firstName' } ">{{user.firstName}}</td>
                 <td ng-class="{active: searchBy==='lastName' } ">{{user.lastName}}</td>
-                <td ng-class="{active: searchBy==='userName' } ">{{user.userName}}</td>
+                <td ng-class="{active: searchBy==='userName' } "><a href="#profile/{{user.userName}}">{{user.userName}}</a></td>
                 <td>{{user.password}}</td>
             </tr>
         </tbody>
-        {{users.length}}
+        {{data.length}}
     </table>
-    <button type="button" class="btn btn-default">Prev</button>
-    <button type="button" class="btn btn-default">Next</button>
+    <button type="button" class="btn btn-default" ng-click="onPreviousClick()">Prev</button>
+    {{currentPage}}/{{totalRecords}}
+    <button type="button" class="btn btn-default" ng-click="onNextClick()">Next</button>
 </div>

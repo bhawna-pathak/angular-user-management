@@ -29,9 +29,9 @@ angular.module('myApp')
                         return err;
                     });
                 return $timeout(function() {
-                    alert('Got Users');
+                    // alert('Got Users');
                     return promise;
-                }, 3000);
+                }, 1000);
             },
             setUser: function(newUser) {
                 user = newUser;

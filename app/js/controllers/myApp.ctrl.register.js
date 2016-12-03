@@ -14,6 +14,6 @@ angular.module('myApp')
                 userService.setUser($scope.user);
                 $location.path('profile');
             }
-        }
+        };
 
     });

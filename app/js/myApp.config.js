@@ -26,10 +26,14 @@ angular.module('myApp')
                 }
             })
             .when('/profile/:userName', {
-                templateUrl: 'app/partials/routes/userDetail.html',
-                routeVars: {
+                templateUrl: 'app/partials/routes/profile.html',
+                routVars: {
                     pageTitle: 'Profile'
                 }
+            })
+            .when('/album/:name/:singer', {
+                templateUrl: 'app/partials/routes/album.html',
+                // controller: 'AlbumCtrl'
             })
             .when('/register', {
                 templateUrl: 'app/partials/routes/register.html',
